@@ -1,0 +1,122 @@
+/* Layout */
+.app-container {
+  @apply min-h-screen bg-background text-foreground;
+}
+
+/* Header */
+.header {
+  @apply border-b relative bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+}
+
+.header-container {
+  @apply container mx-auto px-4 py-4 flex items-center justify-between;
+}
+
+.brand {
+  @apply flex items-center gap-2;
+}
+
+.brand-logo {
+  @apply relative h-8 w-8;
+}
+
+.brand-logo svg {
+  @apply h-full w-full;
+}
+
+.brand-logo path {
+  @apply animate-pulse;
+  fill: url(#skull-gradient);
+  filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.6));
+}
+
+.brand-name {
+  @apply text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80;
+}
+
+.header-actions {
+  @apply flex items-center gap-4;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  @apply fixed bottom-4 right-4 rounded-full w-12 h-12 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 bg-background border-2 border-primary/20;
+}
+
+/* Main Content */
+.main-content {
+  @apply container mx-auto px-4 py-6 grid grid-cols-12 gap-6;
+}
+
+/* Preview Section */
+.preview-section {
+  @apply col-span-8;
+}
+
+.preview-card {
+  @apply w-full aspect-video bg-black/90 flex items-center justify-center rounded-lg overflow-hidden border border-border/10;
+}
+
+.preview-video {
+  @apply w-full h-full object-contain;
+}
+
+.upload-zone {
+  @apply text-center p-8;
+}
+
+.upload-icon {
+  @apply h-12 w-12 text-muted-foreground mx-auto mb-4;
+}
+
+/* Timeline */
+.timeline-container {
+  @apply mt-6;
+}
+
+.timeline-controls {
+  @apply flex items-center gap-4 mb-4;
+}
+
+.timeline-track {
+  @apply h-32 border rounded-md p-4 bg-card;
+}
+
+.timeline-clip {
+  @apply w-32 h-20 bg-muted rounded flex items-center justify-center;
+}
+
+/* Tools Section */
+.tools-section {
+  @apply col-span-4;
+}
+
+.tool-card {
+  @apply space-y-4 pt-4;
+}
+
+.tool-grid {
+  @apply grid gap-4;
+}
+
+.tool-button {
+  @apply justify-start w-full;
+}
+
+.effects-grid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+.slider-group {
+  @apply space-y-2;
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(218, 165, 32, 0.8));
+  }
+}
