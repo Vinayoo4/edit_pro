@@ -1,10 +1,23 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Admin } from './pages/Admin';
 import { Gallery } from './pages/Gallery';
+import { SharePublicPage } from './modules/share/SharePublicPage';
 import { Hexagon } from 'lucide-react';
 
 function App() {
+  const location = useLocation();
+  const isPublicShareRoute = location.pathname.startsWith('/share/');
+
+  if (isPublicShareRoute) {
+    return (
+      <Routes>
+        <Route path="/share/:type/:id" element={<SharePublicPage />} />
+        <Route path="/share/:type" element={<SharePublicPage />} />
+      </Routes>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col">
       <header className="bg-white border-b border-neutral-200">
